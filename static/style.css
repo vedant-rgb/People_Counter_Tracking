@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+:root {
+  --text: hsl(0, 0%, 99%);
+  --textDim: hsl(0, 0%, 60%);
+  --background: hsl(0, 0%, 7%);
+  --primary: hsl(155, 100%, 65%);
+  --primaryBg: hsla(155, 100%, 65%, 1%);
+  --primaryHi: hsla(155, 100%, 75%, 25%);
+  --primaryFg: hsl(155, 100%, 85%);
+  --secondary: hsl(156, 51%, 14%);
+  --secondaryFg: hsl(156, 51%, 75%);
+  --secondaryBg: hsla(156, 51%, 14%, 5%);
+  --secondaryHi: hsla(156, 51%, 30%, 50%);
+  --accent: hsl(155, 100%, 94%);
+  --accentBg: hsla(155, 100%, 94%, 1%);
+  --accentHi: hsla(155, 100%, 100%, 25%);
+}
+
+body {
+  font-family: 'Manrope';
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--text);
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  margin-left: 30rem;
+  width:1500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--textDim);
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+.msg{
+  width:500px;
+}
+
+.menu:hover {
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sitename {
+  font-weight: bold;
+}
+
+.grid {
+  position: absolute;
+  height: 100%;
+  /* weight: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  z-index: -1;
+}
+
+.grid-svg {
+  height: 80%;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+}
+
+.blur {
+  height: 12rem;
+  width: 12rem;
+  background-color: var(--primary);
+  filter: blur(100px);
+  border-radius: 100px;
+  z-index: 0;
+  position: absolute;
+}
+
+.title {
+  font-size: 10rem;
+  font-weight: 700;
+  letter-spacing: -0.8rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  z-index: 1000;
+}
+
+.title > p {
+  margin: 0;
+  line-height: 10rem;
+  width: auto;
+}
+
+.title > p:nth-child(1){
+  align-self: flex-start;
+}
+
+.title > p:nth-child(2){
+  margin-top: 2rem;
+  color: var(--primary);
+  align-self: flex-end;
+}
+
+.title > p:nth-child(3){
+  align-self: flex-end;
+}
+
+.material-icons {
+  display: none;
+  fill: var(--text);
+}
+
+
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  height: 50px;
+  width: 160px;
+  z-index: 9999;
+}
+
+button {
+  height: 50px;
+  width: 160px;
+  clip-path: path("M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25");
+  border: none;
+  border-radius: 13px;
+  background-color: var(--primaryBg);
+  box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+  color: var(--primaryFg);
+  font-family: "Manrope";
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translateY(0px);
+  transition: all 0.2s ease;
+}
+
+span {
+  width: 100px;
+  height: 60px;
+  background-color: var(--primaryHi);
+  border-radius: 100%;
+  filter: blur(20px);
+  position: absolute;
+  bottom: -50%;
+  transition: all 0.2s ease;
+}
+
+.button:hover > span {
+  opacity: 60%;
+}
+
+.button:hover > button {
+  transform: translateY(5px);
+}
+
+.button.first {
+  top: 12%;
+  right: 20%;
+}
+
+.button.sec {
+  bottom: 13%;
+  right: 11%;
+}
+
+.button.sec > button {
+  background-color: var(--accentBg);
+  box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+  color: var(--accentFg);
+}
+
+.button.sec > span {
+  background-color: var(--accentHi);
+}
+
+.button.third {
+  bottom: 25%;
+  left: 15%;
+}
+
+.button.third > button {
+  background-color: var(--secondaryBg);
+  box-shadow: 0px -3px 15px 0px var(--secondary) inset;
+  color: var(--secondaryFg);
+}
+
+.button.third > span {
+  background-color: var(--secondaryHi);
+}
+
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 50%;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 50%;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 4rem;
+    line-height: 0;
+  }
+  
+  .title > p {
+    line-height: 5rem;
+    letter-spacing: -0.3rem;
+  }
+  
+  nav > :not(.sitename, .material-icons) {
+    display: none;
+  }
+  
+  nav {
+    justify-content: space-between;
+  }
+  
+  .material-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+}
+
+/* ***********************************************************  MODEL   *********************************************** */
+.model {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh; 
+  flex-direction: column; 
+}
+.upload-video{
+  margin-bottom: 1.2rem;
+}
+
+.upload-box{
+  height: 60%;
+  width: 400PX;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  gap:1.7rem;
+  background: rgba(252, 251, 251, 0.05); /* Adjust alpha (opacity) for transparency */
+  backdrop-filter: blur(10px); /* Adjust blur radius */
+  border-radius: 20px;
+}
+
+#uploadForm{
+  gap:1.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload{
+  margin-top: 3rem;
+  
+}
+#predict{
+  gap:2.5rem;
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fileInput:hover,
+.predict:hover,
+.upload:hover{
+  background: rgba(255, 255, 255, 0.1); /* White background with transparency */
+  backdrop-filter: blur(20px); 
+}
+
+.predict,
+.upload{
+  background-color: var(--accentBg);
+  box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+  color: var(--accentFg);
+}
+
+#fileInput{
+  backdrop-filter: blur(10px); 
+  border-radius: 20px; 
+  width:6rem;
+  height:1.5rem;
+  clip-path: path("M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25");
+  border: none;
+  border-radius: 13px;
+  background-color: var(--primaryBg);
+  box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+  color: var(--primaryFg);
+  font-family: "Manrope";
+  font-size: 1rem;
+}
+
+.blur-text {
+  color: transparent; 
+  text-shadow: 0 0 5px #a6a6a680; 
+}
+
+/* *******************************************************  ABOUT CSS  ************************************************************ */
+#carouselExampleSlidesOnly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%; /* Set the desired width */
+  height: 400px; /* Set the desired height */
+  height:390px;
+  width:350px;
+  overflow: hidden; /* Hide overflow to show only one card */
+  margin: auto; /* Center horizontally */
+}
+
+.carousel-inner {
+  height:100%;
+  display: flex;
+  flex-wrap: nowrap; /* Display only one card at a time */
+}
+
+.carousel-item {
+  width: 100%; /* Each card occupies the full width of the carousel */
+  height:100;
+}
+
+/* Adjust card width and height as needed */
+#member {
+  width:100%;/* Set the desired card width */
+  height: 100%; /* Set the desired card height */
+  /* margin: 0 10px; Add space between cards */
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  box-shadow: 0 25px 45px rgba(0,0,0,0,0.3);
+  border:2px solid rgba(255,255,255,0.3);
+  color: white;
+}
+
+.image{
+  margin-left: 2rem;
+  position: relative;
+  border-radius: 50%;
+  width: 290px;
+  height: 270px;
+  padding: 2rem 2rem;
+  /* background-size: cover; Scale the background image to cover the entire box */
+  /* background-position: center; Position the background image in the center */
+}
+
+#info{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.abc{
+  background-color:black;
+}
+/* *********************************************  INDEX  ****************************************************** */
+
+.result{
+  display: flex;
+  /* justify-content: center;  */
+  /* align-items: center; */
+  flex-direction: column;
+  height:100vh;
+}
+
+.result-box{
+  height:100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+}
+
+.result-b{
+  height: 60%;
+  width: 30%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  gap:1.5rem;
+  background: rgba(255, 255, 255, 0.1); /* White background with transparency */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 20px; 
+}
+
+/* *********************************************************************************************** */
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px; /* Half of the height */
+  margin-left: -25px; /* Half of the width */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none; /* Initially hidden */
+}
